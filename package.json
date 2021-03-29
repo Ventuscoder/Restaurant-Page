@@ -1,0 +1,16 @@
+{
+  "name": "Restaurant-Page",
+  "version": "1.0.0",
+  "description": "A tabbed restaurant page bundled using webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0"
+  }
+}
