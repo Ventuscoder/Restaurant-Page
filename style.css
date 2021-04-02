@@ -39,3 +39,10 @@
     border: 1px solid #ccc;
     border-top: none;
 }
+
+/* Style the header */
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+}
