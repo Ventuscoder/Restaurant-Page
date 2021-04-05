@@ -54,3 +54,12 @@ h2 {
     text-align: center;
     font-size: 40px;
 }
+
+/* Center the image */
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
