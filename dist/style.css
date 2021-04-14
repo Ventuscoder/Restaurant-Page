@@ -66,3 +66,7 @@ h2 {
     padding-top: 10px;
     font-weight: bold;
 }
+
+.active {
+    display: block;
+}
