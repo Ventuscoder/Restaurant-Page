@@ -7,3 +7,31 @@ class Content {
         return this.func;
     }
 }
+
+let menu = new Content('Menu', () => {
+    let parentNode = document.querySelector('#Menu');
+    let menuContent = [
+        {
+            name: 'Bacon & pepperoni with cheese combo',
+            price: 699.99
+        },
+        {
+            name: 'Indian cottage cheese & chilli crunch',
+            price: 489.99
+        },
+        {
+            name: 'Sausage & salami barbeque supreme',
+            price: 849.99
+        }
+    ]
+    let title = document.createElement('h3');
+    title.textContent = 'Given below are our most bought, most popular, or in other words, bestselling pizzas!';
+    title.style.textAlign = 'center';
+    parentNode.appendChild(title);
+    for (let menuItem of menuContent) {
+        let item = document.createElement('div');
+        item.classList.add('food');
+        item.textContent = `${menuItem['name']} - ${menuItem['price']}`;
+        parentNode.appendChild(item);
+    }
+})
