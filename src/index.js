@@ -34,4 +34,4 @@ let menu = new Content('Menu', () => {
         item.textContent = `${menuItem['name']} - ${menuItem['price']}`;
         parentNode.appendChild(item);
     }
-})
+});
