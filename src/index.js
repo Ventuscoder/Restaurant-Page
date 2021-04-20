@@ -52,3 +52,13 @@ let home = new Content('Home', () => {
     parentNode.appendChild(desc);
     parentNode.appendChild(image);
 });
+
+let contact = new Content('Contact', () => {
+    let parentNode = document.querySelector('#Contact');
+    let title = document.createElement('h3');
+    title.textContent = 'Leave a missed call at 8EF32-80WLP and we\'ll connect with you on WhatsApp!';
+    let ps = document.createElement('p');
+    ps.textContent = 'PS: SPAM GUARANTEED';
+    parentNode.appendChild(title);
+    parentNode.appendChild(ps);
+});
