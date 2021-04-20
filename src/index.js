@@ -35,3 +35,20 @@ let menu = new Content('Menu', () => {
         parentNode.appendChild(item);
     }
 });
+
+let home = new Content('Home', () => {
+    let parentNode = document.querySelector('#Home');
+    let title = document.createElement('h3');
+    title.textContent = 'Welcome to our Restaurant Page!';
+    title.style.textAlign = 'center';
+    let desc = document.createElement('p');
+    desc.textContent = 'We provide pizzas to those who long for them. Do not hesitate to order a pizza in LESS THAN TWO MINUTES!';
+    desc.style.textAlign = 'center';
+    let image = document.createElement('img');
+    image.src = 'pizza.jpg';
+    image.alt = 'Our pizzas';
+    image.classList.add('center');
+    parentNode.appendChild(title);
+    parentNode.appendChild(desc);
+    parentNode.appendChild(image);
+});
