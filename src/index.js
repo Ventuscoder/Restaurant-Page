@@ -1,7 +1,15 @@
 class Content {
     constructor(name, func) {
         this.name = name;
-        this.func = func;
+        this.func = function(){
+            let buttons = document.querySelectorAll('.tabcontent');
+            for (let content of buttons) {
+                content.style.display = 'none';
+            }
+            let specBtn = document.querySelector(`#${name}`);
+            specBtn.style.display = 'block';
+            func();
+        };
     }
     onClick() {
         return this.func;
