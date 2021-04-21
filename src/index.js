@@ -5,18 +5,19 @@ let contactBtn = document.querySelector('.contact-btn');
 class Content {
     constructor(name, func) {
         this.name = name;
-        this.func = () => {
+        this.func = func;
+    }
+    onClick() {
+        return function () {
             let buttons = document.querySelectorAll('.tabcontent');
             for (let content of buttons) {
                 content.style.display = 'none';
             }
             let specBtn = document.querySelector(`#${name}`);
             specBtn.style.display = 'block';
-            func();
-        };
-    }
-    onClick() {
-        this.func();
+            this.func;
+        }
+        
     }
 }
 
