@@ -5,7 +5,7 @@ let contactBtn = document.querySelector('.contact-btn');
 class Content {
     constructor(name, func) {
         this.name = name;
-        this.func = function(){
+        this.func = () => {
             let buttons = document.querySelectorAll('.tabcontent');
             for (let content of buttons) {
                 content.style.display = 'none';
