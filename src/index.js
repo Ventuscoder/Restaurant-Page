@@ -13,9 +13,9 @@ class Content {
             for (let content of buttons) {
                 content.style.display = 'none';
             }
-            let specBtn = document.querySelector(`#${name}`);
+            let specBtn = document.querySelector(`#${this.name}`);
             specBtn.style.display = 'block';
-            this.func;
+            this.func();
         }
         
     }
