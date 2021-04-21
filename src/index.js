@@ -1,3 +1,7 @@
+let menuBtn = document.querySelector('.menu-btn');
+let homeBtn = document.querySelector('.home-btn');
+let contactBtn = document.querySelector('.contact-btn');
+
 class Content {
     constructor(name, func) {
         this.name = name;
@@ -70,3 +74,9 @@ let contact = new Content('Contact', () => {
     parentNode.appendChild(title);
     parentNode.appendChild(ps);
 });
+
+homeBtn.addEventListener('click', home.onClick);
+menuBtn.addEventListener('click', menu.onClick);
+contactBtn.addEventListener('click', contact.onClick);
+
+window.addEventListener('load', home.onClick);
