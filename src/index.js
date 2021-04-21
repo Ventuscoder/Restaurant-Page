@@ -16,7 +16,7 @@ class Content {
         };
     }
     onClick() {
-        return this.func;
+        this.func();
     }
 }
 
