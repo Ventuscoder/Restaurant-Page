@@ -78,5 +78,3 @@ let contact = new Content('Contact', () => {
 homeBtn.addEventListener('click', home.onClick);
 menuBtn.addEventListener('click', menu.onClick);
 contactBtn.addEventListener('click', contact.onClick);
-
-window.addEventListener('load', home.onClick());
