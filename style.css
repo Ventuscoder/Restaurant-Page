@@ -69,3 +69,7 @@ h2 {
 .active {
     display: block;
 }
+
+.hidden {
+    display: none;
+}
