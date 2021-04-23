@@ -1,6 +1,21 @@
+const { hidden } = require("chalk");
+
 let menuBtn = document.querySelector('.menu-btn');
 let homeBtn = document.querySelector('.home-btn');
 let contactBtn = document.querySelector('.contact-btn');
+let btns = [menuBtn, homeBtn, contactBtn];
+
+function setBtnActive(id) {
+    for (let i = 0; i < 3; i++) {
+        if (btns[i].classList.contains("active")) {
+            btns[i].classList.remove("active");
+        } else {
+            btns[i].classList.remove("hidden");
+        }
+        btns[i].classList.add("hidden");
+    }
+    document.querySelector(`#${id}`).classList.add("active");
+}
 
 class Content {
     constructor(name, func) {
