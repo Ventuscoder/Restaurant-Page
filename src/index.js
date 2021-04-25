@@ -4,17 +4,20 @@ let menuBtn = document.querySelector('.menu-btn');
 let homeBtn = document.querySelector('.home-btn');
 let contactBtn = document.querySelector('.contact-btn');
 let btns = [menuBtn, homeBtn, contactBtn];
+let tabs = [document.querySelector('#Home'), document.querySelector('#Menu'), document.querySelector('#Contact')];
 
 function setBtnActive(id) {
-    for (let i = 0; i < 3; i++) {
-        if (btns[i].classList.contains("active")) {
-            btns[i].classList.remove("active");
+    return function() {
+        for (let i = 0; i < 3; i++) {
+        if (tabs[i].classList.contains("hidden")) {
+            continue;
         } else {
-            btns[i].classList.remove("hidden");
+            tabs[i].classList.add('hidden');
         }
-        btns[i].classList.add("hidden");
     }
-    document.querySelector(`#${id}`).classList.add("active");
+    document.querySelector('#'+id).classList.remove('hidden');
+    }
+    
 }
 
 function createHome() {
@@ -76,6 +79,7 @@ function setupTabs() {
     createHome();
     createMenu();
     createContact();
+    setBtnActive('Home');
 }
 
 homeBtn.addEventListener('click', setBtnActive('Home'));
