@@ -17,26 +17,24 @@ function setBtnActive(id) {
     document.querySelector(`#${id}`).classList.add("active");
 }
 
-class Content {
-    constructor(name, func) {
-        this.name = name;
-        this.func = func;
-    }
-    onClick() {
-        return function () {
-            let buttons = document.querySelectorAll('.tabcontent');
-            for (let content of buttons) {
-                content.style.display = 'none';
-            }
-            let specBtn = document.querySelector(`#${this.name}`);
-            specBtn.style.display = 'block';
-            this.func();
-        }
-        
-    }
+function createHome() {
+    let parentNode = document.querySelector('#Home');
+    let title = document.createElement('h3');
+    title.textContent = 'Welcome to our Restaurant Page!';
+    title.style.textAlign = 'center';
+    let desc = document.createElement('p');
+    desc.textContent = 'We provide pizzas to those who long for them. Do not hesitate to order a pizza in LESS THAN TWO MINUTES!';
+    desc.style.textAlign = 'center';
+    let image = document.createElement('img');
+    image.src = 'pizza.jpg';
+    image.alt = 'Our pizzas';
+    image.classList.add('center');
+    parentNode.appendChild(title);
+    parentNode.appendChild(desc);
+    parentNode.appendChild(image);
 }
 
-let menu = new Content('Menu', () => {
+function createMenu() {
     let parentNode = document.querySelector('#Menu');
     let menuContent = [
         {
@@ -62,26 +60,9 @@ let menu = new Content('Menu', () => {
         item.textContent = `${menuItem['name']} - ${menuItem['price']}`;
         parentNode.appendChild(item);
     }
-});
+}
 
-let home = new Content('Home', () => {
-    let parentNode = document.querySelector('#Home');
-    let title = document.createElement('h3');
-    title.textContent = 'Welcome to our Restaurant Page!';
-    title.style.textAlign = 'center';
-    let desc = document.createElement('p');
-    desc.textContent = 'We provide pizzas to those who long for them. Do not hesitate to order a pizza in LESS THAN TWO MINUTES!';
-    desc.style.textAlign = 'center';
-    let image = document.createElement('img');
-    image.src = 'pizza.jpg';
-    image.alt = 'Our pizzas';
-    image.classList.add('center');
-    parentNode.appendChild(title);
-    parentNode.appendChild(desc);
-    parentNode.appendChild(image);
-});
-
-let contact = new Content('Contact', () => {
+function createContact() {
     let parentNode = document.querySelector('#Contact');
     let title = document.createElement('h3');
     title.textContent = 'Leave a missed call at 8EF32-80WLP and we\'ll connect with you on WhatsApp!';
@@ -89,8 +70,16 @@ let contact = new Content('Contact', () => {
     ps.textContent = 'PS: SPAM GUARANTEED';
     parentNode.appendChild(title);
     parentNode.appendChild(ps);
-});
+}
 
-homeBtn.addEventListener('click', home.onClick);
-menuBtn.addEventListener('click', menu.onClick);
-contactBtn.addEventListener('click', contact.onClick);
+function setupTabs() {
+    createHome();
+    createMenu();
+    createContact();
+}
+
+homeBtn.addEventListener('click', setBtnActive('Home'));
+menuBtn.addEventListener('click', setBtnActive('Menu'));
+contactBtn.addEventListener('click', setBtnActive('Contact'));
+
+window.addEventListener('load', setupTabs);
